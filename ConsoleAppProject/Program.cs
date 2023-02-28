@@ -2,7 +2,6 @@
 using ConsoleAppProject.App03;
 using ConsoleAppProject.Helpers;
 using System;
-
 namespace ConsoleAppProject
 {
     /// <summary>
@@ -26,7 +25,7 @@ namespace ConsoleAppProject
             Console.WriteLine();
 
             DistanceConverter converter = new DistanceConverter();
-            //converter.run();
+            converter.Run();
         }
     }
 }
