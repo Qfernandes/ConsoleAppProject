@@ -1,5 +1,6 @@
 ﻿using ConsoleAppProject.App01;
 using ConsoleAppProject.App03;
+using ConsoleAppProject.App02;
 using ConsoleAppProject.Helpers;
 using System;
 namespace ConsoleAppProject
@@ -25,8 +26,19 @@ namespace ConsoleAppProject
             Console.WriteLine(" =================================================");
             Console.WriteLine();
 
-            DistanceConverter converter = new DistanceConverter();
-            converter.Run();
+            Console.WriteLine("Enter 1 or 2: ");
+            int choice = Convert.ToInt32(Console.ReadLine());
+            if(choice == 1)
+            {
+                DistanceConverter converter = new DistanceConverter();
+                converter.Run();
+            }
+
+            if(choice ==2)
+            {
+                BMI bMI = new BMI();
+                bMI.Run();
+            }
         }
     }
 }
