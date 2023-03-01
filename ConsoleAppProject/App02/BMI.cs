@@ -12,11 +12,33 @@ namespace ConsoleAppProject.App02
         double weightKG;
         double heightM;
         double bmiResult;
+        double weightPD;
+        double heightIN;
+        double metricbmiResult;
 
         public void Run()
         {
-            Console.WriteLine(" Welcome To App 2 ");
+            Console.WriteLine("Welcome To App 2");
 
+            Console.WriteLine("Please choose the following options: ");
+            Console.WriteLine(" 1. Imperial Units ");
+            Console.WriteLine(" 2. Metric Units ");
+
+            int choice = Convert.ToInt32(Console.ReadLine());
+            if (choice == 1)
+            {
+                imperialunits();
+
+            }
+
+            if (choice == 2)
+            {
+                metricunits();
+            }
+        }
+
+        public void imperialunits()
+        {
             Console.WriteLine("Please enter the weight: ");
             weightKG = Convert.ToDouble(Console.ReadLine());
 
@@ -55,6 +77,19 @@ namespace ConsoleAppProject.App02
             }
 
 
+        }
+
+        public void metricunits()
+        {
+            Console.WriteLine("Please enter the weight: ");
+            weightPD = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Please enter the height: ");
+            heightIN = Convert.ToDouble(Console.ReadLine());
+
+            metricbmiResult = weightPD * 703 / (heightIN * heightIN);
+            
+            Console.WriteLine(" Metric BMI Result is: " + metricbmiResult );
         }
     }
 }
