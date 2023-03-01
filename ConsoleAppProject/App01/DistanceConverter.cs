@@ -19,9 +19,14 @@ namespace ConsoleAppProject.App01
   
         public void Run()
         {
+            Console.WriteLine("Please choose the following choices");
+            Console.WriteLine("1. ");
+
+
             MilesToFeet();
             FeetToMiles();
             MilesToMetres();
+
         }
 
         public void MilesToFeet()
@@ -48,7 +53,7 @@ namespace ConsoleAppProject.App01
             Miles = Feets / Feet_To_Miles;
 
             //step 6
-            Console.WriteLine(Feets + "feets is " + Miles + " miles " );
+            Console.WriteLine(Feets + " feets is " + Miles + " miles " );
         }
 
         public void MilesToMetres()
