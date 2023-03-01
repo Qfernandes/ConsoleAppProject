@@ -26,7 +26,10 @@ namespace ConsoleAppProject
             Console.WriteLine(" =================================================");
             Console.WriteLine();
 
-            Console.WriteLine("Enter 1 or 2: ");
+            Console.WriteLine("Which program would you like to use: ");
+            Console.WriteLine(" 1. Distance Converter ");
+            Console.WriteLine(" 2. BMI ");
+
             int choice = Convert.ToInt32(Console.ReadLine());
             if(choice == 1)
             {
