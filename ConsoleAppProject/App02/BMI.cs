@@ -88,8 +88,41 @@ namespace ConsoleAppProject.App02
             heightIN = Convert.ToDouble(Console.ReadLine());
 
             metricbmiResult = weightPD * 703 / (heightIN * heightIN);
+
+            Console.WriteLine(" BMI Result is: " + metricbmiResult );
             
             Console.WriteLine(" Metric BMI Result is: " + metricbmiResult );
+
+            if (bmiResult<=18.5)
+            {
+                Console.WriteLine("Underweight");
+            }
+
+            else if (bmiResult>= 18.5 && bmiResult <= 24.9)
+            {
+                Console.WriteLine("Healthy");
+            }
+
+            else if (bmiResult>= 25.0 && bmiResult <=29.9)
+            {
+                Console.WriteLine("Overweight");
+            }
+
+            else if (bmiResult>= 30.0 && bmiResult <= 34.9)
+            {
+                Console.WriteLine("Obese Class I");
+            }
+
+            else if (bmiResult>= 35.0 && bmiResult <= 39.9)
+            {
+                Console.WriteLine("Obese Class II");
+            }
+
+            else if (bmiResult>=40.0)
+            {
+               Console.WriteLine("Obese Class III"); 
+            }
+            
         }
     }
 }
