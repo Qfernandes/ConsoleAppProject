@@ -10,24 +10,101 @@ namespace ConsoleAppProject.App01
     /// </author>
     public class DistanceConverter
     {
-        const int Miles_To_Feet = 5280;
-        const int Feet_To_Miles = 5280;
+        const double Miles_To_Feet = 5280;
         const double Miles_To_Metres = 1609.34;
-        private double Miles;
-        private double Feets;
-        private double Metres;
+        const double Feet_To_Metres = 0.30;
+        double fromDistance;
+        double toDistance;
+        string fromUnit;
+        string toUnit;
+        public double miles;
+        public double feet;
+        public double metres;
   
         public void Run()
         {
             Console.WriteLine("Please choose the following choices");
-            Console.WriteLine("1. ");
+            Console.WriteLine("Select the From Unit:  ");
+            fromUnit = unitMenu();
+            Console.WriteLine(" Select the To Unit: ");
+            toUnit = unitMenu();
 
+            fromDistance = InputUnit(fromUnit);
 
-            MilesToFeet();
-            FeetToMiles();
-            MilesToMetres();
+            ConvertDistance();
+            Print();
+        }
+        public string unitMenu()
+        {
+            Console.WriteLine("1. Miles");
+            Console.WriteLine("2. Feet");
+            Console.WriteLine("3. Metres");
+            Console.WriteLine("Please enter the number: ");
+            string choice = Console.ReadLine();
+
+            if (choice != "1" && choice !="2" && choice != "3")
+            {
+                throw new Exception("Invalid choice, Please select only the following choices");
+            }
+
+            if (choice == "1")
+            {
+                return "miles";
+
+            }
+            else if (choice == "2")
+            {
+                return "feet";
+            }
+            else if (choice =="3")
+            {
+                return "metres";
+            }
+
+            return null;
+        }
+        public int InputUnit(string prompt)
+        {
+            Console.WriteLine("Please enter the number of " + prompt);
+            return Convert.ToInt32(Console.ReadLine());
+        }
+        public void ConvertDistance()
+        {
+            if (fromUnit == "miles" && toUnit =="feet")
+            {
+                toDistance = fromDistance * Miles_To_Feet;
+            }
+            else if (fromUnit == "feet" && toUnit =="miles")
+            {
+                toDistance = fromDistance / Miles_To_Feet;
+            }
+            else if (fromUnit == "miles" && toUnit =="metres")
+            {
+                toDistance = fromDistance * Miles_To_Metres;
+            }
+            else if (fromUnit == "metres" && toUnit =="miles")
+            {
+                toDistance = fromDistance / Miles_To_Metres;
+            }
+            else if (fromUnit == "feet" && toUnit =="metres")
+            {
+                toDistance = fromDistance * Feet_To_Metres;
+            }
+
+            else if (fromUnit == "metres" && toUnit =="feet")
+            {
+              toDistance = fromDistance / Feet_To_Metres;  
+            }
 
         }
+        public void Print()
+        {
+            Console.WriteLine(fromDistance + " " + fromUnit + " is " + toDistance + " " + toUnit);
+        }
+    }
+}
+
+        /*
 
         public void MilesToFeet()
         {
@@ -71,3 +148,4 @@ namespace ConsoleAppProject.App01
         }
     }
 }
+*/
