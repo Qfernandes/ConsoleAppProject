@@ -19,6 +19,7 @@ namespace ConsoleAppProject
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
 
+            //added a heading with my name and the name of the application
             Console.WriteLine();
             Console.WriteLine(" =================================================");
             Console.WriteLine("    BNU CO453 Applications Programming 2022-2023! ");
@@ -26,10 +27,12 @@ namespace ConsoleAppProject
             Console.WriteLine(" =================================================");
             Console.WriteLine();
 
-            Console.WriteLine("Which program would you like to use: ");
+            //created a choice, user should select either app 1 or app 2
+            Console.WriteLine("Which application would you like to use: ");
             Console.WriteLine(" 1. Distance Converter ");
             Console.WriteLine(" 2. BMI ");
 
+            //if 1 is pressed, the distance converter application runs. If 2 is pressed, the BMI application runs.
             int choice = Convert.ToInt32(Console.ReadLine());
             if(choice == 1)
             {
