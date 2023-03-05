@@ -3,7 +3,7 @@
 namespace ConsoleAppProject.App01
 {
     /// <summary>
-    /// Please describe the main features of this App
+    /// This is a Distance Converter where the user can convert their distance from and to miles, feet and metres
     /// </summary>
     /// <author>
     /// Derek version 0.1
