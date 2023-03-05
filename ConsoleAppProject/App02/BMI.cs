@@ -2,7 +2,7 @@
 namespace ConsoleAppProject.App02
 {
     /// <summary>
-    /// This is a BMI Calculator, where it can allow the user to calulate their BMI based on their height and weight.
+    /// This is a BMI Calculator, where it can allow the user to calculate their BMI based on their height and weight.
     /// </summary>
     /// <author>
     /// Student Name version 0.1
@@ -95,6 +95,9 @@ namespace ConsoleAppProject.App02
 
             Console.WriteLine(" BMI Result is: " + imperialbmiResult );
 
+            //Display message to BAME groups
+            Console.WriteLine(" There is more health risks if you are black, asian or other minority ethnic. " );
+
             //Weight Status
 
             if (imperialbmiResult<=18.50)
@@ -151,6 +154,9 @@ namespace ConsoleAppProject.App02
             //It will display the Metric BMI
             
             Console.WriteLine(" Metric BMI Result is: " + metricbmiResult );
+
+            //Display message to BAME groups
+            Console.WriteLine(" There is more health risks if you are black, asian or other minority ethnic. " );
 
             //Weight Status
 
