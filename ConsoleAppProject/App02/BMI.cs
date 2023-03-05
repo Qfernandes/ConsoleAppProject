@@ -11,10 +11,14 @@ namespace ConsoleAppProject.App02
     {
         double weightKG;
         double heightM;
-        double bmiResult;
-        double weightPD;
         double heightIN;
+        double weightPD;
+        double weightST;
+        double heightFT;
+        double weightinP;
+        double heightinIN;
         double metricbmiResult;
+        double imperialbmiResult;
 
         public void Run()
         {
@@ -35,43 +39,56 @@ namespace ConsoleAppProject.App02
             {
                 metricunits();
             }
+
         }
 
         public void imperialunits()
         {
-            Console.WriteLine("Please enter the weight: ");
-            weightKG = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Please enter the weight in stones: ");
+            weightST = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("Please enter the height: ");
-            heightM = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Please enter the weight in pounds: ");
+            weightPD = Convert.ToDouble(Console.ReadLine());
 
-            bmiResult = weightKG / (heightM * heightM);
+            Console.WriteLine("Please enter the height in feet: ");
+            heightFT = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine(" BMI Result is: " + bmiResult );
+            Console.WriteLine("Please enter the height in inches: ");
+            heightIN = Convert.ToDouble(Console.ReadLine());
 
-            if (bmiResult<=18.5)
+            weightinP = (weightST * 14) + weightPD;
+            Console.WriteLine(" Pounds is " + weightinP );
+
+            heightinIN = (heightFT * 12) + heightIN;
+            Console.WriteLine(" Height is " + heightinIN );
+
+            imperialbmiResult = weightinP * 703 / (heightinIN * heightinIN);
+
+            Console.WriteLine(" BMI Result is: " + imperialbmiResult );
+
+            if (imperialbmiResult<=18.50)
             {
                 Console.WriteLine("Underweight");
             }
 
-            else if (bmiResult>= 18.5 && bmiResult <= 24.9)
+            else if (imperialbmiResult>= 18.5 && imperialbmiResult <= 24.9)
             {
                 Console.WriteLine("Healthy");
             }
 
-            else if (bmiResult>= 25.0 && bmiResult <=29.9)
+            else if (imperialbmiResult>= 25.0 && imperialbmiResult <=29.9)
             {
                 Console.WriteLine("Overweight");
             }
-            else if (bmiResult>= 30.0 && bmiResult <= 34.9)
+            else if (imperialbmiResult>= 30.0 && imperialbmiResult <= 34.9)
             {
                 Console.WriteLine("Obese Class I");
             }
-            else if (bmiResult>= 35.0 && bmiResult <= 39.9)
+            else if (imperialbmiResult>= 35.0 && imperialbmiResult <= 39.9)
             {
                 Console.WriteLine("Obese Class II");
             }
-            else if (bmiResult>=40.0)
+            else if (imperialbmiResult>=40.0)
             {
                 Console.WriteLine("Obese Class III");
             }
@@ -81,44 +98,43 @@ namespace ConsoleAppProject.App02
 
         public void metricunits()
         {
-            Console.WriteLine("Please enter the weight: ");
-            weightPD = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Please enter the weight in kilograms: ");
+            weightKG = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("Please enter the height: ");
-            heightIN = Convert.ToDouble(Console.ReadLine());
 
-            metricbmiResult = weightPD * 703 / (heightIN * heightIN);
+            Console.WriteLine("Please enter the height in metres: ");
+            heightM = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine(" BMI Result is: " + metricbmiResult );
+            metricbmiResult = weightKG / (heightM * heightM);
             
             Console.WriteLine(" Metric BMI Result is: " + metricbmiResult );
 
-            if (bmiResult<=18.5)
+            if (metricbmiResult<=18.5)
             {
                 Console.WriteLine("Underweight");
             }
 
-            else if (bmiResult>= 18.5 && bmiResult <= 24.9)
+            else if (metricbmiResult>= 18.5 && metricbmiResult <= 24.9)
             {
                 Console.WriteLine("Healthy");
             }
 
-            else if (bmiResult>= 25.0 && bmiResult <=29.9)
+            else if (metricbmiResult>= 25.0 && metricbmiResult <=29.9)
             {
                 Console.WriteLine("Overweight");
             }
 
-            else if (bmiResult>= 30.0 && bmiResult <= 34.9)
+            else if (metricbmiResult>= 30.0 && metricbmiResult <= 34.9)
             {
                 Console.WriteLine("Obese Class I");
             }
 
-            else if (bmiResult>= 35.0 && bmiResult <= 39.9)
+            else if (metricbmiResult>= 35.0 && metricbmiResult <= 39.9)
             {
                 Console.WriteLine("Obese Class II");
             }
 
-            else if (bmiResult>=40.0)
+            else if (metricbmiResult>=40.0)
             {
                Console.WriteLine("Obese Class III"); 
             }
