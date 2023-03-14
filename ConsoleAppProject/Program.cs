@@ -31,6 +31,7 @@ namespace ConsoleAppProject
             Console.WriteLine("Which application would you like to use: ");
             Console.WriteLine(" 1. Distance Converter ");
             Console.WriteLine(" 2. BMI ");
+            Console.WriteLine(" 3. Student Grades ");
 
             //if 1 is pressed, the distance converter application runs. If 2 is pressed, the BMI application runs.
             int choice = Convert.ToInt32(Console.ReadLine());
@@ -44,6 +45,12 @@ namespace ConsoleAppProject
             {
                 BMI bMI = new BMI();
                 bMI.Run();
+            }
+            
+            if (choice ==3)
+            {
+                StudentGrades student = new StudentGrades();
+                student.Run();
             }
         }
     }
