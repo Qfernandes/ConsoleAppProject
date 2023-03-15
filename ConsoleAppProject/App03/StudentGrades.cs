@@ -16,8 +16,8 @@ namespace ConsoleAppProject.App03
         public int [] Marks;
         public int [] GradeProfile;
         public double Mean;
-        public int MinimumSM;
-        public int MaximumSM;
+        public int Minimum;
+        public int Maximum;
 
         public const int GradeA = 70;
         public const int GradeB = 60;
@@ -138,6 +138,31 @@ namespace ConsoleAppProject.App03
 
             choicemenu();
         }
+        public Grades ConvertToGrade(int mark)
+        {
+            if (mark >= 0 && mark < GradeD )
+            {
+                return Grades.F;
+            }
+            else if (mark < GradeC)
+            {
+                return Grades.D;
+            }
+            else if (mark < GradeB)
+            {
+                return Grades.C;
+            }
+            else if (mark < GradeA)
+            {
+                return Grades.B;
+            }
+            else
+            {
+                return Grades.A;
+            }
+
+        }
+
     }
 }
 
