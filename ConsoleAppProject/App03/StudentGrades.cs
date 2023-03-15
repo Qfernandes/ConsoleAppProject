@@ -162,6 +162,28 @@ namespace ConsoleAppProject.App03
             }
 
         }
+        public void OutputStats()
+        {
+            Minimum = Marks[0];
+            Maximum = Marks[0];
+
+            double total = 0;
+            foreach(int mark in Marks)
+            {
+                if (mark > Maximum) Maximum = mark;
+                if (mark < Minimum) Minimum = mark;
+
+                total = total + mark;
+            }
+            Mean = total / Marks.Length;
+            double overallMean = Mean;
+            Console.WriteLine($"Overall Mean: {overallMean.ToString("F")}");
+            Console.WriteLine($"Minimum: {Minimum}");
+            Console.WriteLine($"Maximum: {Maximum}");
+
+            choicemenu();
+        }
+    
 
     }
 }
