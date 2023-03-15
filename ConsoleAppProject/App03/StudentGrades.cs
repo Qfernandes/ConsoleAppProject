@@ -55,11 +55,11 @@ namespace ConsoleAppProject.App03
             {
                 OutputStudent();
             }
-            /*
             if (choice == 3)
             {
                 OutputStats();
             }
+            /*
             if (choice == 4)
             {
                 OutputGradeProfile();
