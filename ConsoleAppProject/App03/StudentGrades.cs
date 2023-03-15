@@ -65,6 +65,16 @@ namespace ConsoleAppProject.App03
             }
             
         }
+        public StudentGrades()
+        {
+            Students = new string[]
+            {
+                "Nick", "Sam", "Desmond", "Kate", "Holly", "Donna", "Frohu", "Sha", "Melria", "Tika"
+            };
+            GradeProfile = new int[(int)Grades.A + 1];
+            Marks = new int [Students.Length];
+        }
+    
     }
 }
 
