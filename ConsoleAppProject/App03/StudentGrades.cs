@@ -207,8 +207,20 @@ namespace ConsoleAppProject.App03
                 GradeProfile[(int)grade]++;
             }
         }
-    
+        /*
+        public void OutputGradeProfile()
+        {
+            Grades grade = Grades.X;
 
+            foreach(int count in GradeProfile)
+            {
+                int percentage = count * 100 / Marks.Length;
+                Console.WriteLine($"Grades {grade} {percentage}% Count {count}");
+                grade++;
+            }
+
+        }
+        */
     }
 }
 
