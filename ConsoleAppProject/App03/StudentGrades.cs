@@ -151,6 +151,9 @@ namespace ConsoleAppProject.App03
 
             choicemenu();
         }
+
+        //Created a method called Convert To Grade so it wil convert student marks and store into grades.
+
         public Grades ConvertToGrade(int mark)
         {
             if (mark >= 0 && mark < GradeD )
