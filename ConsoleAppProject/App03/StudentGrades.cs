@@ -14,7 +14,11 @@ namespace ConsoleAppProject.App03
     {
 
         public string [] Students;
-        
+        public int [] StudMarks;
+        public int [] GradeProfile;
+        public double Mean;
+        public int StudentMin;
+        public int StudentMax;
 
         public const int GradeA = 70;
         public const int GradeB = 60;
@@ -38,7 +42,7 @@ namespace ConsoleAppProject.App03
 
             int choice = Convert.ToInt32(Console.ReadLine());
 
-            //if choice 1 or 2 not pressed, then it will output an error message
+            //if choice 1, 2, 3 or 4 not pressed, then it will output an error message
 
             if (choice != 1 && choice !=2 && choice !=3 && choice !=4)
             {
