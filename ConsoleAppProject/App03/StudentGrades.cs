@@ -238,6 +238,13 @@ namespace ConsoleAppProject.App03
                 Console.WriteLine($"Grade {grades} {percentage}% Count {studcount}");
                 grades++;
             }
+            int studentgctotal = studentgc.Sum();
+
+            Console.WriteLine($"Count and percentage student achieved Grade A is: {studentgc[4]} {(double)studentgc[4] / studentgctotal:P}");
+            Console.WriteLine($"Count and percentage student achieved Grade B is: {studentgc[3]} {(double)studentgc[3] / studentgctotal:P}");
+            Console.WriteLine($"Count and percentage student achieved Grade C is: {studentgc[2]} {(double)studentgc[2] / studentgctotal:P}");
+            Console.WriteLine($"Count and percentage student achieved Grade D is: {studentgc[1]} {(double)studentgc[1] / studentgctotal:P}");
+            Console.WriteLine($"Count and percentage student achieved Grade F is: {studentgc[0]} {(double)studentgc[0] / studentgctotal:P}");
         }
     }
 }
