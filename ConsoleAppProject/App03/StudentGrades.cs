@@ -120,6 +120,7 @@ namespace ConsoleAppProject.App03
             choicemenu();
         }
 
+        //Output Student method outputs the student marks with their names
         public void OutputStudent()
         {
             Console.WriteLine(" -----------------------------------------");
@@ -131,6 +132,7 @@ namespace ConsoleAppProject.App03
             Console.WriteLine(" Mark: ");
             int studentCount = 0;
 
+            //This For loop will output all 10 students marks with their names
             for( int i = 0; i< Students.Length; i++)
             {
                int mark = StudMarks[i];
@@ -142,6 +144,7 @@ namespace ConsoleAppProject.App03
                studentCount++;
 
             }
+            //Outputs the total number of students
             Console.WriteLine(" -----------------------------------------");
             Console.WriteLine($" Total Number of students: {studentCount}");
             Console.WriteLine(" -----------------------------------------");
