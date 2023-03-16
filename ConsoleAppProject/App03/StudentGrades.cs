@@ -27,10 +27,13 @@ namespace ConsoleAppProject.App03
         public const int GradeC = 50;
         public const int GradeD = 40;
 
+        //Created the Run method to run the choice menu
+
         public void Run()
         {
             Console.WriteLine("Welcome To App 3- Student Grades and Marks");
-
+            
+            //Created a method for choices display the choices where ysers can press the valud choices to output their choice
             choicemenu();
         }
 
@@ -44,7 +47,7 @@ namespace ConsoleAppProject.App03
 
             int choice = Convert.ToInt32(Console.ReadLine());
 
-            //if choice 1, 2, 3 or 4 not pressed, then it will output an error message
+            //Users have to press either 1, 2 , 3 or 4 otherwise it will output an error message
 
             if (choice != 1 && choice !=2 && choice !=3 && choice !=4)
             {
