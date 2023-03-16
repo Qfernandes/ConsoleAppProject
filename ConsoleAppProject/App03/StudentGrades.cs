@@ -179,5 +179,12 @@ namespace ConsoleAppProject.App03
             choicemenu();
 
         }
+        public void CalculateGradeProfile()
+        {
+            for (int i = 0; i < GradeProfile.Length; i++)
+            {
+                GradeProfile[i] = 0;
+            }
+        }
     }
 }
