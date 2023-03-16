@@ -12,13 +12,15 @@ namespace ConsoleAppProject.App03
     /// </summary>
     public class StudentGrades
     {
-
+        //declared array for student, student marks and grade to store multiple variables
         public string [] Students;
         public int [] StudMarks;
         public int [] GradeProfile;
+        //declared mean variable and Student Minimum and Maximum variables
         public double Mean;
         public int StudentMin;
         public int StudentMax;
+        //declared constant varaibles for grades
 
         public const int GradeA = 70;
         public const int GradeB = 60;
