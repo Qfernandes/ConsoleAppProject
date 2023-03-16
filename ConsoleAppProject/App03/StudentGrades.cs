@@ -231,6 +231,11 @@ namespace ConsoleAppProject.App03
                     studentgc[0]++;
                 }
             }
+            Grades grades = Grades.X;
+            foreach (int studcount in studentgc)
+            {
+                int percentage = studcount * 100 / StudMarks.Length;
+            }
         }
     }
 }
