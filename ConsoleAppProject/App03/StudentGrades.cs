@@ -176,6 +176,8 @@ namespace ConsoleAppProject.App03
             Console.WriteLine("Student Minimum: " + StudentMin);
             Console.WriteLine("Student Maximum: " + StudentMax);
 
+            choicemenu();
+
         }
     }
 }
