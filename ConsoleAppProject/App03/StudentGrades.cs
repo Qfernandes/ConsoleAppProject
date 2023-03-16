@@ -73,12 +73,16 @@ namespace ConsoleAppProject.App03
             }
             
         }
+
+        //Created an array of list of 10 students, These student names are called when 'Students' is used
+
         public StudentGrades()
         {
             Students = new string[]
             {
                 "Nick", "Sam", "Desmond", "Kate", "Holly", "Donna", "Frohu", "Sha", "Melria", "Tika"
             };
+            //Assigned GradeProfile and StudMarks
             GradeProfile = new int[(int)Grades.A + 1];
             
             StudMarks = new int [Students.Length];
