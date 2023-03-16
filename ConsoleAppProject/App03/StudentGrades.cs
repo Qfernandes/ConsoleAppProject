@@ -207,5 +207,30 @@ namespace ConsoleAppProject.App03
         public void OutputGradeProfile()
         {
             int[] studentgc = new int[5];
+
+            foreach (int mark in StudMarks)
+            {
+                if (mark >= GradeA)
+                {
+                    studentgc[4]++;
+                }
+                else if (mark >= GradeB)
+                {
+                    studentgc[3]++;
+                }
+                else if (mark >= GradeC)
+                {
+                    studentgc[2]++;
+                }
+                else if (mark >= GradeD)
+                {
+                    studentgc[1]++;
+                }
+                else
+                {
+                    studentgc[0]++;
+                }
+            }
+        }
     }
 }
