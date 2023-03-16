@@ -26,5 +26,6 @@ namespace ConsoleAppProject.App03
         [Display(Name = "1st")]
         [Description("BSc(Hons) First Class")]
         A,
+        X
     }
 }
