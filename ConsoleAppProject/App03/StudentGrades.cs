@@ -88,12 +88,17 @@ namespace ConsoleAppProject.App03
             StudMarks = new int [Students.Length];
         }
 
+        //Created a Student Marks method to input marks for students
+        //Created a for loop so it will ask the user to input marks for each 10 students
+
         public void StudentMarks()
         {
           for (int i = 0; i < Students.Length; i++)
             {
                 bool validation = false;
                 int mark = 0;
+
+                //Checks if mark is an integer or not, otherwise will output an error message
 
                 while (!validation)
                 {
@@ -106,6 +111,7 @@ namespace ConsoleAppProject.App03
                     }
                     else
                     {
+                        //if user enters the mark in integer, it returns true and proceed to the next method 
                         validation = true;
                     } 
                 }
