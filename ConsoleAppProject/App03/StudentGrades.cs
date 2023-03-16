@@ -235,6 +235,8 @@ namespace ConsoleAppProject.App03
             foreach (int studcount in studentgc)
             {
                 int percentage = studcount * 100 / StudMarks.Length;
+                Console.WriteLine($"Grade {grades} {percentage}% Count {studcount}");
+                grades++;
             }
         }
     }
