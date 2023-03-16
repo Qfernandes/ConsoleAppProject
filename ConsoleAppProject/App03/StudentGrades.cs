@@ -204,5 +204,8 @@ namespace ConsoleAppProject.App03
                 GradeProfile[(int)grade]++;
             }
         }
+        public void OutputGradeProfile()
+        {
+            int[] studentgc = new int[5];
     }
 }
