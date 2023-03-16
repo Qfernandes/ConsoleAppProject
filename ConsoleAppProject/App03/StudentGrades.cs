@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using ConsoleAppProject.Helpers;
+using System.Linq;
 
 namespace ConsoleAppProject.App03
 {
@@ -13,21 +14,12 @@ namespace ConsoleAppProject.App03
     {
 
         public string [] Students;
-        public int [] Marks;
-        public int [] GradeProfile;
-        public double Mean;
-        public int Minimum;
-        public int Maximum;
+        
 
         public const int GradeA = 70;
         public const int GradeB = 60;
         public const int GradeC = 50;
         public const int GradeD = 40;
-        
-        public const int HighestMark = 100;
-        public const int LowestMark = 0;
-
-
 
         public void Run()
         {
@@ -40,12 +32,18 @@ namespace ConsoleAppProject.App03
         {
             Console.WriteLine(" Please choose the following options: ");
             Console.WriteLine(" 1. Input Student marks ");
-            Console.WriteLine(" 2. Output Marks ");
+            Console.WriteLine(" 2. Output Student Marks ");
             Console.WriteLine(" 3. Output Statistics ");
-            Console.WriteLine(" 4. Output Grade Profile ");
-
+            Console.WriteLine(" 4. Grade Profile ");
 
             int choice = Convert.ToInt32(Console.ReadLine());
+
+            //if choice 1 or 2 not pressed, then it will output an error message
+
+            if (choice != 1 && choice !=2 && choice !=3 && choice !=4)
+            {
+                throw new Exception(" Invalid choice, Please Try Again ");
+            }
 
             if(choice == 1)
             {
@@ -59,12 +57,11 @@ namespace ConsoleAppProject.App03
             {
                 OutputStats();
             }
-            /*
+            
             if (choice == 4)
             {
                 OutputGradeProfile();
             }
-            */
             
         }
         public StudentGrades()
@@ -74,17 +71,18 @@ namespace ConsoleAppProject.App03
                 "Nick", "Sam", "Desmond", "Kate", "Holly", "Donna", "Frohu", "Sha", "Melria", "Tika"
             };
             GradeProfile = new int[(int)Grades.A + 1];
-            Marks = new int [Students.Length];
+            
+            StudMarks = new int [Students.Length];
         }
 
         public void StudentMarks()
         {
-            for (int i = 0; i < Students.Length; i++)
+          for (int i = 0; i < Students.Length; i++)
             {
-                bool validInput = false;
+                bool validation = false;
                 int mark = 0;
 
-                while (!validInput)
+                while (!validation)
                 {
                     Console.Write($"Enter mark for {Students[i]}: ");
                     string input = Console.ReadLine();
@@ -93,40 +91,33 @@ namespace ConsoleAppProject.App03
                     {
                         Console.WriteLine(" Invalid integer ");
                     }
-                    else if (mark < 0)
-                    {
-                      Console.WriteLine(" Invalid mark, cannot accept less than 0 ");
-                    }
-                    else if (mark>100)
-                    {
-                        Console.WriteLine(" Invalid mark, cannot more than 100 ");
-                    }
                     else
                     {
-                        validInput = true;
-                    }
-
+                        validation = true;
+                    } 
                 }
-
-                Marks[i] = mark;
+                StudMarks[i] = mark;
             }
-
             choicemenu();
         }
 
         public void OutputStudent()
         {
+            Console.WriteLine(" -----------------------------------------");
+            Console.WriteLine($"               List Of Students          ");
+            Console.WriteLine(" -----------------------------------------");
+
             Console.WriteLine(" No: ");
             Console.WriteLine(" Name: ");
             Console.WriteLine(" Mark: ");
-            Console.WriteLine(" Grade: ");
             int studentCount = 0;
 
             for( int i = 0; i< Students.Length; i++)
             {
-               int mark = Marks[i];
+               int mark = StudMarks[i];
                string studentNumber = (i + 1).ToString("D2");
                Console.WriteLine(studentNumber);
+               //Console.WriteLine(grade);
                Console.WriteLine(Students[i]);
                Console.WriteLine(mark);
                studentCount++;
@@ -164,64 +155,23 @@ namespace ConsoleAppProject.App03
         }
         public void OutputStats()
         {
-            Minimum = Marks[0];
-            Maximum = Marks[0];
+            StudentMin = StudMarks[0];
+            StudentMax = StudMarks[0];
 
             double total = 0;
-            foreach(int mark in Marks)
+            foreach(int mark in StudMarks)
             {
-                if (mark > Maximum) Maximum = mark;
-                if (mark < Minimum) Minimum = mark;
+                if (mark > StudentMax) StudentMin = mark;
+                if (mark < StudentMin) StudentMin = mark;
 
                 total = total + mark;
             }
-            Mean = total / Marks.Length;
-            double overallMean = Mean;
-            Console.WriteLine($"Overall Mean: {overallMean.ToString("F")}");
-            Console.WriteLine($"Minimum: {Minimum}");
-            Console.WriteLine($"Maximum: {Maximum}");
-
-            choicemenu();
-        }
-        public void CalculateGradeProfile()
-        {
-            for (int i = 0; i < GradeProfile.Length; i++)
-            {
-                GradeProfile[i] = 0;
-            }
-            
-            foreach (int mark in Marks)
-            {
-                Grades grade = ConvertToGrade(mark);
-                GradeProfile[(int)grade]++;
-            }
-
-            for (int i =0; i < GradeProfile.Length; i++)
-            {
-                GradeProfile[i] = 0;
-            }
-
-            foreach (int mark in Marks)
-            {
-                Grades grade = ConvertToGrade(mark);
-                GradeProfile[(int)grade]++;
-            }
-        }
-        /*
-        public void OutputGradeProfile()
-        {
-            Grades grade = Grades.X;
-
-            foreach(int count in GradeProfile)
-            {
-                int percentage = count * 100 / Marks.Length;
-                Console.WriteLine($"Grades {grade} {percentage}% Count {count}");
-                grade++;
-            }
+            Mean = total / StudMarks.Length;
+            double studentMean = Mean;
+            Console.WriteLine("Student Mean: " + studentMean.ToString("F"));
+            Console.WriteLine("Student Minimum: " + StudentMin);
+            Console.WriteLine("Student Maximum: " + StudentMax);
 
         }
-        */
     }
 }
-
-        

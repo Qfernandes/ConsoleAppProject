@@ -34,6 +34,7 @@ namespace ConsoleAppProject
             Console.WriteLine(" 3. Student Grades ");
 
             //if 1 is pressed, the distance converter application runs. If 2 is pressed, the BMI application runs.
+            //If 3 is pressed, the Student Grades application runs.
             int choice = Convert.ToInt32(Console.ReadLine());
             if(choice == 1)
             {
