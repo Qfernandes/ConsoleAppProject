@@ -216,7 +216,10 @@ namespace ConsoleAppProject.App03
             choicemenu();
 
         }
-        
+
+        //Grade Profile method displays how many students have the same grades with percentage.
+        //Counts how many student and works out the percentage of how many students achieved the same grades.
+
         public void CalculateGradeProfile()
         {
             for (int i = 0; i < GradeProfile.Length; i++)
