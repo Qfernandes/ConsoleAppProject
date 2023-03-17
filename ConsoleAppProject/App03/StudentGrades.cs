@@ -244,6 +244,8 @@ namespace ConsoleAppProject.App03
                 GradeProfile[(int)grade]++;
             }
         }
+
+        //Output Grade Profile 
         public void OutputGradeProfile()
         {
             int[] studentgc = new int[5];
@@ -274,8 +276,11 @@ namespace ConsoleAppProject.App03
             Grades grades = Grades.X;
             foreach (int studcount in studentgc)
             {
+                //Calcualtes the percentage
                 int percentage = studcount * 100 / StudMarks.Length;
+                //Outputs the grade, percentage and count
                 Console.WriteLine($"Grade {grades} {percentage}% Count {studcount}");
+                //grade is incremented
                 grades++;
             }
             int studentgctotal = studentgc.Sum();
