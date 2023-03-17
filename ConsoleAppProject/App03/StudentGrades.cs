@@ -156,22 +156,28 @@ namespace ConsoleAppProject.App03
 
         public Grades ConvertToGrade(int mark)
         {
+            //If mark is more than 0 and less than GradeD, then it will return Grade F.This refers to Grades.cs
+
             if (mark >= 0 && mark < GradeD )
             {
                 return Grades.F;
             }
+            //If mark is less than GradeC, then it will return Grade D.
             else if (mark < GradeC)
             {
                 return Grades.D;
             }
+            //If mark is less than GradeB, then it will return Grade C.
             else if (mark < GradeB)
             {
                 return Grades.C;
             }
+            //If mark is less than GradeA, then it will return Grade B.
             else if (mark < GradeA)
             {
                 return Grades.B;
             }
+            //Otherswise, it will return to Grade A. 
             else
             {
                 return Grades.A;
