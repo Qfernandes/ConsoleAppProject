@@ -184,21 +184,31 @@ namespace ConsoleAppProject.App03
             }
 
         }
+
+        //Output Stats method calculates the mean, minimum, maximum
         public void OutputStats()
         {
+            //Assigning Student Min and Student Max to StudMarks
             StudentMin = StudMarks[0];
             StudentMax = StudMarks[0];
 
+            //total equals to 0
             double total = 0;
             foreach(int mark in StudMarks)
             {
+                //Minimum and Maximum
                 if (mark > StudentMax) StudentMin = mark;
                 if (mark < StudentMin) StudentMin = mark;
 
+                //Assigned total and mark is total
+
                 total = total + mark;
             }
+            //Formula for Mean
             Mean = total / StudMarks.Length;
+            //Mean assigns to studentmean
             double studentMean = Mean;
+            //Printing out mean, minimum and maximum
             Console.WriteLine("Student Mean: " + studentMean.ToString("F"));
             Console.WriteLine("Student Minimum: " + StudentMin);
             Console.WriteLine("Student Maximum: " + StudentMax);
