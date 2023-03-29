@@ -1,6 +1,7 @@
 ﻿using ConsoleAppProject.App01;
 using ConsoleAppProject.App03;
 using ConsoleAppProject.App02;
+using ConsoleAppProject.App04;
 using ConsoleAppProject.Helpers;
 using System;
 namespace ConsoleAppProject
@@ -32,6 +33,8 @@ namespace ConsoleAppProject
             Console.WriteLine(" 1. Distance Converter ");
             Console.WriteLine(" 2. BMI ");
             Console.WriteLine(" 3. Student Grades ");
+            Console.WriteLine(" 3. Student Grades ");
+            Console.WriteLine(" 4. Social Network ");
 
             //if 1 is pressed, the distance converter application runs. If 2 is pressed, the BMI application runs.
             //If 3 is pressed, the Student Grades application runs.
@@ -52,6 +55,12 @@ namespace ConsoleAppProject
             {
                 StudentGrades student = new StudentGrades();
                 student.Run();
+            }
+
+            if (choice ==4)
+            {
+                Post post = new Post();
+                post.Run();
             }
         }
     }
