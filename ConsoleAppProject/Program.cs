@@ -59,9 +59,10 @@ namespace ConsoleAppProject
 
             if (choice ==4)
             {
-                Post post = new Post();
-                post.Run();
+                NetworkApp socialn = new NetworkApp();
+                socialn.DisplayMenu();
             }
+
         }
     }
 }
